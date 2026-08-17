@@ -54,9 +54,17 @@ services:
           name: n8n-postgres
           property: password
 
+      - key: DB_POSTGRESDB_CONNECTION_TIMEOUT
+        value: "30000"
+
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=384"
+
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
 
 databases:
   - name: n8n-postgres
     plan: free
+    databaseName: n8n
+    user: n8n
