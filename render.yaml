@@ -5,14 +5,26 @@ services:
     plan: free
 
     envVars:
-      - key: N8N_HOST
-        value: 0.0.0.0
+      - key: PORT
+        value: 5678
 
       - key: N8N_PORT
         value: 5678
 
+      - key: N8N_LISTEN_ADDRESS
+        value: 0.0.0.0
+
       - key: N8N_PROTOCOL
         value: https
+
+      - key: N8N_HOST
+        value: n8n-9b0m.onrender.com
+
+      - key: WEBHOOK_URL
+        value: https://n8n-9b0m.onrender.com/
+
+      - key: N8N_EDITOR_BASE_URL
+        value: https://n8n-9b0m.onrender.com/
 
       - key: N8N_RUNNERS_ENABLED
         value: true
