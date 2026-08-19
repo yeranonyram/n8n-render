@@ -20,7 +20,7 @@ services:
       - key: N8N_HOST
         value: "n8n-9b0m.onrender.com"
 
-      - key: WEBHOOK_URL
+      - key: N8N_WEBHOOK_URL
         value: "https://n8n-9b0m.onrender.com/"
 
       - key: N8N_EDITOR_BASE_URL
@@ -55,13 +55,16 @@ services:
           property: password
 
       - key: DB_POSTGRESDB_CONNECTION_TIMEOUT
-        value: "30000"
+        value: "60000"
 
       - key: NODE_OPTIONS
         value: "--max-old-space-size=384"
 
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
+        
+      - key: N8N_PROXY_HOPS
+        value: "1"
 
 databases:
   - name: n8n-postgres
